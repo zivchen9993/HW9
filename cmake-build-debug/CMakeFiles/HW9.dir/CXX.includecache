@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Include/field.h
+string.h
+../Include/string.h
+
+../Include/string.h
+stddef.h
+-
+iostream
+-
+
+/home/mamat/CLionProjects/HW9/field.cpp
+iostream
+-
+string.h
+/home/mamat/CLionProjects/HW9/string.h
+field.h
+/home/mamat/CLionProjects/HW9/field.h
+
