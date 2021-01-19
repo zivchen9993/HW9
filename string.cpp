@@ -1,5 +1,7 @@
 #include <iostream>
-#include "string.h"
+#include <cstring>
+
+#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
 String::String() {
   data = new char[1];
@@ -24,12 +26,13 @@ static char *create_new_copy(const char *src, size_t len) {
   }
   return dst;
 }
-
+/* delete if compiled fine with <cstring>
 static int string_length(const char *src) {
   int count = 0;
   while (src[count] != '\0') {
     count++;
   }
+  strlen(src);
   return count;
 }
 
@@ -56,6 +59,7 @@ static bool string_compare(const char *str1, const char *str2) {
   }
   return false;
 }
+*/
 
 bool does_exist(const char data, const char *delimiter) {
   if (delimiter == NULL) {
@@ -87,7 +91,7 @@ String::String(const String &str)
     : length(str.length), data(create_new_copy(str.data, str.length)) {}
 
 String::String(const char *str) {
-  length = string_length(str);
+  length = strlen(str);
   data = create_new_copy(str, length);
 }
 
@@ -110,7 +114,7 @@ String &String::operator=(const String &rhs) {
 }
 
 String &String::operator=(const char *str) {
-  length = string_length(str);
+  length = strlen(str);
   /*if (data != NULL) {
     delete[] data;
   } check if necessary in the course!!!!*/
@@ -120,7 +124,7 @@ String &String::operator=(const char *str) {
 }
 
 bool String::equals(const char *rhs) const {
-  return string_compare(data, rhs);
+  return !strcmp(data, rhs);
 }
 
 bool String::equals(const String &rhs) const {

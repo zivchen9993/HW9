@@ -87,9 +87,6 @@
 		<Unit filename="/home/mamat/CLionProjects/HW9/field.cpp">
 			<Option target="HW9"/>
 		</Unit>
-		<Unit filename="/home/mamat/CLionProjects/HW9/field.h">
-			<Option target="HW9"/>
-		</Unit>
 		<Unit filename="/home/mamat/CLionProjects/HW9/main.cpp">
 			<Option target="HW9"/>
 		</Unit>

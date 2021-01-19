@@ -1,6 +1,10 @@
 #include <iostream>
-#include "string.h"
+#include <cstring>
+/*
 #include "field.h"
+
+#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+
 
 Field::Field(String pattern, field_type type) {
   this->type = type;
@@ -30,4 +34,4 @@ bool Field::match_value(String val) const {
     return true;
   }
   return false;
-}
+}*/
