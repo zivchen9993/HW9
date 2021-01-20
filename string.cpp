@@ -3,12 +3,6 @@
 
 #include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
-String::String() {
-  data = new char[1];
-  *data = '\0';
-  length = 0;
-}
-
 static char *create_new_copy(const char *src, size_t len) {
   char *dst;
   if (src == NULL) {
@@ -39,6 +33,11 @@ bool does_exist(const char data, const char *array_deli) {
 /////////////////////////////////////////////////////
 ////////////////////functions from string.h//////////
 /////////////////////////////////////////////////////
+String::String() {
+  data = new char[1];
+  *data = '\0';
+  length = 0;
+}
 
 String::String(const String &str)
     : length(str.length), data(create_new_copy(str.data, str.length)) {}

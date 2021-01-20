@@ -1,9 +1,9 @@
-/*
+
 #ifndef FIELD_H
 #define FIELD_H
-
 #include "string.h"
 
+#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 enum field_type { IP=0, PORT, GENERIC };
 
 class Field {
@@ -34,4 +34,3 @@ public:
 
 
 #endif
-*/
