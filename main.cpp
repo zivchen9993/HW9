@@ -17,7 +17,12 @@ int main () {
   bool two = sec_s.equals(third_s);
   std::cout<< sec_s.equals("ziv")<< std::endl;
   String something("1234");
+  String something2("1+2    ");
   String somethingelse("   1234    ");
+  String somethingelse2("  ... ziv    ");
+  String *arr;
+  size_t size;
+  somethingelse2.split(" .*/", &arr, &size);
   cout << something.to_integer() << endl;
   cout << somethingelse.equals(something) << endl;
   String ST = somethingelse.trim();
@@ -27,6 +32,15 @@ int main () {
   String s1("\0");
   bool isEqual = s.equals(s1);
   cout << isEqual << endl;
+
+  bool isEqual_arr = arr[0].equals(sec_s);
+  cout << isEqual_arr << endl;//expected 1
+  bool isEqual_arr2 = arr[2].equals(something2);
+  cout << isEqual_arr2 << endl;//expected 1
+  bool isEqual_size = (size == 3);
+  cout << isEqual_size << endl;//expected 1
+  //cout << arr[] << endl;
+  //cout <<  << endl;//expected 1
 
   /*Ip my_ip("1.2.3");
   my_ip.get_type();

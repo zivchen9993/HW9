@@ -9,12 +9,6 @@ String::String() {
   length = 0;
 }
 
-/*
-class String {
-    char *data;
-    size_t length;
-*/
-
 static char *create_new_copy(const char *src, size_t len) {
   char *dst;
   if (src == NULL) {
@@ -24,42 +18,9 @@ static char *create_new_copy(const char *src, size_t len) {
   for (int i = 0; i <= len; i++) {
     dst[i] = src[i];
   }
+  dst[len] = '\0';
   return dst;
 }
-/* delete if compiled fine with <cstring>
-static int string_length(const char *src) {
-  int count = 0;
-  while (src[count] != '\0') {
-    count++;
-  }
-  strlen(src);
-  return count;
-}
-
-static bool string_compare(const char *str1, const char *str2) {
-  if (str1 == NULL) {
-    if (str2 == NULL) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  if (str2 == NULL) {
-    return false;
-  }
-  int i = 0;
-  while (str1[i] != '\0') {
-    if (str1[i] != str2[i]) {
-      return false;
-    }
-    i++;
-  }
-  if (str2[i] == '\0') {
-    return true;
-  }
-  return false;
-}
-*/
 
 bool does_exist(const char data, const char *array_deli) {
   if (array_deli == NULL) {
@@ -71,14 +32,6 @@ bool does_exist(const char data, const char *array_deli) {
       return true;
     }
     count++;
-  }
-  return false;
-}
-
-bool is_integer(char check_char) {
-  if (('0' <= check_char) && (check_char <= '9')) { //check implicit
-    // convertion of char
-    return true;
   }
   return false;
 }
@@ -104,9 +57,6 @@ String::~String() {
 String &String::operator=(const String &rhs) {
   if (this != &rhs) {
     length = rhs.length;
-    /*if (data != NULL) {
-      delete[] data;
-    } check if necessary in the course!!!!*/
     delete[] data;
     data = create_new_copy(rhs.data, rhs.length);
   }
@@ -115,9 +65,6 @@ String &String::operator=(const String &rhs) {
 
 String &String::operator=(const char *str) {
   length = strlen(str);
-  /*if (data != NULL) {
-    delete[] data;
-  } check if necessary in the course!!!!*/
   delete[] data;
   data = create_new_copy(str, length);
   return *this;
@@ -141,11 +88,13 @@ void String::split(const char *delimiters,
   if (*output == NULL) {
     output_is_null = true;
   }
-  if (delimiters == NULL || (*data == '\0')) {
+  if ((delimiters == NULL) || (*delimiters == '\0') || (*data == '\0')) {
     *size = 1;
     if (!output_is_null) {
+      String *output_arr = new String[*size];
       String new_str(*this);
-      *output = &new_str;
+      output_arr[0] = new_str;
+      *output = output_arr;
     }
     return;
   }
@@ -155,18 +104,16 @@ void String::split(const char *delimiters,
   bool prev_is_deli = does_exist(data[end_count], delimiters);
   bool end_of_data = false;
   if (prev_is_deli) {
-    end_count++;
     begin_count++;
   }
+  end_count++;
   int *array = new int[2*length + 1];
   int a_i = 0;
   while (!end_of_data) {
     bool curr_is_deli = ((*(data + end_count) == '\0') ||
                           (does_exist(data[end_count], delimiters)));
-    // maybe add '\0' to check
     if (curr_is_deli) {
       if (!prev_is_deli) {
-        //save end and begin to array - check if end or (end -1)
         array[a_i++] = begin_count;
         array[a_i++] = end_count;
         size_of_arr++;
@@ -179,16 +126,16 @@ void String::split(const char *delimiters,
     prev_is_deli = curr_is_deli;
     end_count++;
   }
+  *size = size_of_arr;
   if (output_is_null) {
-    *size = size_of_arr;
     return;
   }
   String *output_arr = new String[size_of_arr];
   for (int i = 0; i < (size_of_arr*2); i += 2) {
     char *sub_data = create_new_copy((data + array[i]), (array[i + 1] -
-    array[i]));//check if -1 is necessary
+    array[i]));
     String sub_string(sub_data);
-    output_arr[i] = sub_string;
+    output_arr[(i/2)] = sub_string;
   }
   *output = output_arr;
   delete[] array;
@@ -196,16 +143,7 @@ void String::split(const char *delimiters,
 
 int String::to_integer() const {
   return atoi(data);
-  /* int integer = 0;
-  for (int i = 0; i < length; ++i) {
-    if (!is_integer(data[i])) {
-      return 0;
-    }
-    integer *= 10;
-    integer += (data[i] - '0');
-  }
-  return integer;
-*/}
+ }
 
 String String::trim() const {
   if (data == NULL) {
@@ -228,6 +166,6 @@ String String::trim() const {
     trim_end--;
   }
   String trimmed_String = create_new_copy((data + trim_begin), (trim_end -
-      trim_begin - 1));
+      trim_begin));
   return trimmed_String;
 }
