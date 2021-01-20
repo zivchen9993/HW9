@@ -61,13 +61,13 @@ static bool string_compare(const char *str1, const char *str2) {
 }
 */
 
-bool does_exist(const char data, const char *delimiter) {
-  if (delimiter == NULL) {
+bool does_exist(const char data, const char *array_deli) {
+  if (array_deli == NULL) {
     return false;
   }
   int count = 0;
-  while (delimiter[count] != '\0') {
-    if (data == delimiter[count]) {
+  while (array_deli[count] != '\0') {
+    if (data == array_deli[count]) {
       return true;
     }
     count++;
@@ -131,52 +131,72 @@ bool String::equals(const String &rhs) const {
   return equals(rhs.data);
 }
 
-/**
- * @brief Splits this to several sub-strings according to delimiters.
- * Allocates memory for output that the user must delete (using delete[]).
- * @note Does not affect this.
- * @note If "output" is set to NULL, do not allocated memory, only
- * compute "size".
- */
 void String::split(const char *delimiters,
                    String **output,
                    size_t *size) const {
   if (size == NULL) {
     return;
   }
-  *size = 0;
   bool output_is_null = false;
   if (*output == NULL) {
     output_is_null = true;
   }
-  if (delimiters == NULL) {
-    String new_str(*this);
+  if (delimiters == NULL || (*data == '\0')) {
     *size = 1;
     if (!output_is_null) {
+      String new_str(*this);
       *output = &new_str;
     }
     return;
   }
+  size_t size_of_arr = 0;
   int begin_count = 0;
   int end_count = 0;
-  while (data[end_count] != '\0') {
-    if (!does_exist(data[end_count], delimiters)) {
-      end_count++;
-    } else {
-      *size++;
+  bool prev_is_deli = does_exist(data[end_count], delimiters);
+  bool end_of_data = false;
+  if (prev_is_deli) {
+    end_count++;
+    begin_count++;
+  }
+  int *array = new int[2*length + 1];
+  int a_i = 0;
+  while (!end_of_data) {
+    bool curr_is_deli = ((*(data + end_count) == '\0') ||
+                          (does_exist(data[end_count], delimiters)));
+    // maybe add '\0' to check
+    if (curr_is_deli) {
+      if (!prev_is_deli) {
+        //save end and begin to array - check if end or (end -1)
+        array[a_i++] = begin_count;
+        array[a_i++] = end_count;
+        size_of_arr++;
+      }
+      begin_count = end_count + 1;
+      if (*(data + end_count) == '\0') {
+      end_of_data = true;
+      }
     }
-
+    prev_is_deli = curr_is_deli;
+    end_count++;
   }
-  char *sub_data = create_new_copy(data + begin_count, end_count -
-      begin_count);
-  String sub_string(sub_data);
-  if (!output_is_null) {
-
+  if (output_is_null) {
+    *size = size_of_arr;
+    return;
   }
+  String *output_arr = new String[size_of_arr];
+  for (int i = 0; i < (size_of_arr*2); i += 2) {
+    char *sub_data = create_new_copy((data + array[i]), (array[i + 1] -
+    array[i]));//check if -1 is necessary
+    String sub_string(sub_data);
+    output_arr[i] = sub_string;
+  }
+  *output = output_arr;
+  delete[] array;
 }
 
 int String::to_integer() const {
-  int integer = 0;
+  return atoi(data);
+  /* int integer = 0;
   for (int i = 0; i < length; ++i) {
     if (!is_integer(data[i])) {
       return 0;
@@ -185,7 +205,7 @@ int String::to_integer() const {
     integer += (data[i] - '0');
   }
   return integer;
-}
+*/}
 
 String String::trim() const {
   if (data == NULL) {
