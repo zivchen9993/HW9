@@ -5,7 +5,7 @@
 #include "port.h"
 #include "input.h"
 
-#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
 int main (int argc, char *argv[]) {
  //need to use check args ..

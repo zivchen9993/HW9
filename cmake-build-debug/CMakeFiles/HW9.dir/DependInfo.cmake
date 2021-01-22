@@ -5,7 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mamat/CLionProjects/HW9/field.cpp" "/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles/HW9.dir/field.cpp.o"
+  "/home/mamat/CLionProjects/HW9/ip.cpp" "/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles/HW9.dir/ip.cpp.o"
   "/home/mamat/CLionProjects/HW9/main.cpp" "/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles/HW9.dir/main.cpp.o"
+  "/home/mamat/CLionProjects/HW9/our_debug.cpp" "/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles/HW9.dir/our_debug.cpp.o"
+  "/home/mamat/CLionProjects/HW9/port.cpp" "/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles/HW9.dir/port.cpp.o"
   "/home/mamat/CLionProjects/HW9/string.cpp" "/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles/HW9.dir/string.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

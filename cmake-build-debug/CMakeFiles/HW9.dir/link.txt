@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/HW9.dir/string.cpp.o CMakeFiles/HW9.dir/main.cpp.o CMakeFiles/HW9.dir/field.cpp.o  -o HW9   -L/home/mamat/CLionProjects/HW9/Libs  -Wl,-rpath,/home/mamat/CLionProjects/HW9/Libs -linput 
+/usr/bin/c++  -g   CMakeFiles/HW9.dir/string.cpp.o CMakeFiles/HW9.dir/our_debug.cpp.o CMakeFiles/HW9.dir/field.cpp.o CMakeFiles/HW9.dir/port.cpp.o CMakeFiles/HW9.dir/ip.cpp.o CMakeFiles/HW9.dir/main.cpp.o  -o HW9   -L/home/mamat/CLionProjects/HW9/libs  -Wl,-rpath,/home/mamat/CLionProjects/HW9/libs -linput 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
 static char *create_new_copy(const char *src, size_t len) {
   char *dst;

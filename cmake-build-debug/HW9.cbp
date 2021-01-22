@@ -87,7 +87,16 @@
 		<Unit filename="/home/mamat/CLionProjects/HW9/field.cpp">
 			<Option target="HW9"/>
 		</Unit>
+		<Unit filename="/home/mamat/CLionProjects/HW9/ip.cpp">
+			<Option target="HW9"/>
+		</Unit>
 		<Unit filename="/home/mamat/CLionProjects/HW9/main.cpp">
+			<Option target="HW9"/>
+		</Unit>
+		<Unit filename="/home/mamat/CLionProjects/HW9/our_debug.cpp">
+			<Option target="HW9"/>
+		</Unit>
+		<Unit filename="/home/mamat/CLionProjects/HW9/port.cpp">
 			<Option target="HW9"/>
 		</Unit>
 		<Unit filename="/home/mamat/CLionProjects/HW9/string.cpp">

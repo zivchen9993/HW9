@@ -170,6 +170,33 @@ field.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/field.cpp.s
 .PHONY : field.cpp.s
 
+ip.o: ip.cpp.o
+
+.PHONY : ip.o
+
+# target to build an object file
+ip.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/ip.cpp.o
+.PHONY : ip.cpp.o
+
+ip.i: ip.cpp.i
+
+.PHONY : ip.i
+
+# target to preprocess a source file
+ip.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/ip.cpp.i
+.PHONY : ip.cpp.i
+
+ip.s: ip.cpp.s
+
+.PHONY : ip.s
+
+# target to generate assembly for a file
+ip.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/ip.cpp.s
+.PHONY : ip.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -196,6 +223,60 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+our_debug.o: our_debug.cpp.o
+
+.PHONY : our_debug.o
+
+# target to build an object file
+our_debug.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/our_debug.cpp.o
+.PHONY : our_debug.cpp.o
+
+our_debug.i: our_debug.cpp.i
+
+.PHONY : our_debug.i
+
+# target to preprocess a source file
+our_debug.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/our_debug.cpp.i
+.PHONY : our_debug.cpp.i
+
+our_debug.s: our_debug.cpp.s
+
+.PHONY : our_debug.s
+
+# target to generate assembly for a file
+our_debug.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/our_debug.cpp.s
+.PHONY : our_debug.cpp.s
+
+port.o: port.cpp.o
+
+.PHONY : port.o
+
+# target to build an object file
+port.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/port.cpp.o
+.PHONY : port.cpp.o
+
+port.i: port.cpp.i
+
+.PHONY : port.i
+
+# target to preprocess a source file
+port.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/port.cpp.i
+.PHONY : port.cpp.i
+
+port.s: port.cpp.s
+
+.PHONY : port.s
+
+# target to generate assembly for a file
+port.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HW9.dir/build.make CMakeFiles/HW9.dir/port.cpp.s
+.PHONY : port.cpp.s
 
 string.o: string.cpp.o
 
@@ -236,9 +317,18 @@ help:
 	@echo "... field.o"
 	@echo "... field.i"
 	@echo "... field.s"
+	@echo "... ip.o"
+	@echo "... ip.i"
+	@echo "... ip.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... our_debug.o"
+	@echo "... our_debug.i"
+	@echo "... our_debug.s"
+	@echo "... port.o"
+	@echo "... port.i"
+	@echo "... port.s"
 	@echo "... string.o"
 	@echo "... string.i"
 	@echo "... string.s"

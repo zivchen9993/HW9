@@ -4,7 +4,7 @@
 
 #include "field.h"
 
-#include "../Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
 #define MASK_SEGMENT 2
 #define SEGMENTS 4

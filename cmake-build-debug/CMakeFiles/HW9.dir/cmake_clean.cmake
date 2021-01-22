@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HW9.dir/field.cpp.o"
+  "CMakeFiles/HW9.dir/ip.cpp.o"
   "CMakeFiles/HW9.dir/main.cpp.o"
+  "CMakeFiles/HW9.dir/our_debug.cpp.o"
+  "CMakeFiles/HW9.dir/port.cpp.o"
   "CMakeFiles/HW9.dir/string.cpp.o"
   "HW9"
   "HW9.pdb"

@@ -3,14 +3,38 @@
 
 CMakeFiles/HW9.dir/field.cpp.o
  ../Include/field.h
- /home/mamat/CLionProjects/HW9/Include_string/string.h
- /home/mamat/CLionProjects/HW9/field.cpp
-CMakeFiles/HW9.dir/main.cpp.o
- ../Include/field.h
  ../Include/ip.h
  ../Include/port.h
+ ../Include_string/string.h
+ /home/mamat/CLionProjects/HW9/Include_string/string.h
+ /home/mamat/CLionProjects/HW9/field.cpp
+CMakeFiles/HW9.dir/ip.cpp.o
+ ../Include/field.h
+ ../Include/ip.h
+ ../Include_string/string.h
+ /home/mamat/CLionProjects/HW9/ip.cpp
+CMakeFiles/HW9.dir/main.cpp.o
+ ../Include/field.h
+ ../Include/input.h
+ ../Include/ip.h
+ ../Include/port.h
+ ../Include_string/string.h
  /home/mamat/CLionProjects/HW9/Include_string/string.h
  /home/mamat/CLionProjects/HW9/main.cpp
+CMakeFiles/HW9.dir/our_debug.cpp.o
+ ../Include/field.h
+ ../Include/input.h
+ ../Include/ip.h
+ ../Include/port.h
+ ../Include_string/string.h
+ /home/mamat/CLionProjects/HW9/Include_string/string.h
+ /home/mamat/CLionProjects/HW9/our_debug.cpp
+CMakeFiles/HW9.dir/port.cpp.o
+ ../Include/field.h
+ ../Include/port.h
+ ../Include_string/string.h
+ /home/mamat/CLionProjects/HW9/Include_string/string.h
+ /home/mamat/CLionProjects/HW9/port.cpp
 CMakeFiles/HW9.dir/string.cpp.o
  /home/mamat/CLionProjects/HW9/Include_string/string.h
  /home/mamat/CLionProjects/HW9/string.cpp

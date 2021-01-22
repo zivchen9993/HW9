@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
 static char *create_new_copy(const char *src, size_t len) {
   char *dst;
@@ -9,7 +9,7 @@ static char *create_new_copy(const char *src, size_t len) {
     return NULL;
   }
   dst = new char[len + 1];
-  for (size_t i = 0; i <= len; i++) {
+  for (int i = 0; i <= len; i++) {
     dst[i] = src[i];
   }
   dst[len] = '\0';

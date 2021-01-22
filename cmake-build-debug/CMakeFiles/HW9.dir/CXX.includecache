@@ -9,16 +9,30 @@
 ../Include/field.h
 string.h
 ../Include/string.h
+../Include_string/string.h
+../Include_string/string.h
+
+../Include/input.h
+field.h
+../Include/field.h
 
 ../Include/ip.h
 field.h
 ../Include/field.h
+../Include_string/string.h
+../Include_string/string.h
 
 ../Include/port.h
-string.h
-../Include/string.h
+cstring
+-
 field.h
 ../Include/field.h
+
+../Include_string/string.h
+stddef.h
+-
+iostream
+-
 
 /home/mamat/CLionProjects/HW9/Include_string/string.h
 stddef.h
@@ -26,7 +40,7 @@ stddef.h
 iostream
 -
 
-/home/mamat/CLionProjects/HW9/main.cpp
+/home/mamat/CLionProjects/HW9/our_debug.cpp
 iostream
 -
 cstring
@@ -37,6 +51,8 @@ ip.h
 /home/mamat/CLionProjects/HW9/ip.h
 port.h
 /home/mamat/CLionProjects/HW9/port.h
+input.h
+/home/mamat/CLionProjects/HW9/input.h
 Include_string/string.h
 /home/mamat/CLionProjects/HW9/Include_string/string.h
 

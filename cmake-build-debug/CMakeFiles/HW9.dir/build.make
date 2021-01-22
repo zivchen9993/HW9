@@ -90,18 +90,18 @@ CMakeFiles/HW9.dir/string.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/string.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/string.cpp -o CMakeFiles/HW9.dir/string.cpp.s
 
-CMakeFiles/HW9.dir/main.cpp.o: CMakeFiles/HW9.dir/flags.make
-CMakeFiles/HW9.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HW9.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HW9.dir/main.cpp.o -c /home/mamat/CLionProjects/HW9/main.cpp
+CMakeFiles/HW9.dir/our_debug.cpp.o: CMakeFiles/HW9.dir/flags.make
+CMakeFiles/HW9.dir/our_debug.cpp.o: ../our_debug.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HW9.dir/our_debug.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HW9.dir/our_debug.cpp.o -c /home/mamat/CLionProjects/HW9/our_debug.cpp
 
-CMakeFiles/HW9.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HW9.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mamat/CLionProjects/HW9/main.cpp > CMakeFiles/HW9.dir/main.cpp.i
+CMakeFiles/HW9.dir/our_debug.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HW9.dir/our_debug.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mamat/CLionProjects/HW9/our_debug.cpp > CMakeFiles/HW9.dir/our_debug.cpp.i
 
-CMakeFiles/HW9.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/main.cpp -o CMakeFiles/HW9.dir/main.cpp.s
+CMakeFiles/HW9.dir/our_debug.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/our_debug.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/our_debug.cpp -o CMakeFiles/HW9.dir/our_debug.cpp.s
 
 CMakeFiles/HW9.dir/field.cpp.o: CMakeFiles/HW9.dir/flags.make
 CMakeFiles/HW9.dir/field.cpp.o: ../field.cpp
@@ -116,21 +116,66 @@ CMakeFiles/HW9.dir/field.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/field.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/field.cpp -o CMakeFiles/HW9.dir/field.cpp.s
 
+CMakeFiles/HW9.dir/port.cpp.o: CMakeFiles/HW9.dir/flags.make
+CMakeFiles/HW9.dir/port.cpp.o: ../port.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HW9.dir/port.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HW9.dir/port.cpp.o -c /home/mamat/CLionProjects/HW9/port.cpp
+
+CMakeFiles/HW9.dir/port.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HW9.dir/port.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mamat/CLionProjects/HW9/port.cpp > CMakeFiles/HW9.dir/port.cpp.i
+
+CMakeFiles/HW9.dir/port.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/port.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/port.cpp -o CMakeFiles/HW9.dir/port.cpp.s
+
+CMakeFiles/HW9.dir/ip.cpp.o: CMakeFiles/HW9.dir/flags.make
+CMakeFiles/HW9.dir/ip.cpp.o: ../ip.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HW9.dir/ip.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HW9.dir/ip.cpp.o -c /home/mamat/CLionProjects/HW9/ip.cpp
+
+CMakeFiles/HW9.dir/ip.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HW9.dir/ip.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mamat/CLionProjects/HW9/ip.cpp > CMakeFiles/HW9.dir/ip.cpp.i
+
+CMakeFiles/HW9.dir/ip.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/ip.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/ip.cpp -o CMakeFiles/HW9.dir/ip.cpp.s
+
+CMakeFiles/HW9.dir/main.cpp.o: CMakeFiles/HW9.dir/flags.make
+CMakeFiles/HW9.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HW9.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HW9.dir/main.cpp.o -c /home/mamat/CLionProjects/HW9/main.cpp
+
+CMakeFiles/HW9.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HW9.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mamat/CLionProjects/HW9/main.cpp > CMakeFiles/HW9.dir/main.cpp.i
+
+CMakeFiles/HW9.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HW9.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mamat/CLionProjects/HW9/main.cpp -o CMakeFiles/HW9.dir/main.cpp.s
+
 # Object files for target HW9
 HW9_OBJECTS = \
 "CMakeFiles/HW9.dir/string.cpp.o" \
-"CMakeFiles/HW9.dir/main.cpp.o" \
-"CMakeFiles/HW9.dir/field.cpp.o"
+"CMakeFiles/HW9.dir/our_debug.cpp.o" \
+"CMakeFiles/HW9.dir/field.cpp.o" \
+"CMakeFiles/HW9.dir/port.cpp.o" \
+"CMakeFiles/HW9.dir/ip.cpp.o" \
+"CMakeFiles/HW9.dir/main.cpp.o"
 
 # External object files for target HW9
 HW9_EXTERNAL_OBJECTS =
 
 HW9: CMakeFiles/HW9.dir/string.cpp.o
-HW9: CMakeFiles/HW9.dir/main.cpp.o
+HW9: CMakeFiles/HW9.dir/our_debug.cpp.o
 HW9: CMakeFiles/HW9.dir/field.cpp.o
+HW9: CMakeFiles/HW9.dir/port.cpp.o
+HW9: CMakeFiles/HW9.dir/ip.cpp.o
+HW9: CMakeFiles/HW9.dir/main.cpp.o
 HW9: CMakeFiles/HW9.dir/build.make
 HW9: CMakeFiles/HW9.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable HW9"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mamat/CLionProjects/HW9/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable HW9"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HW9.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -5,7 +5,7 @@
 #include "ip.h"
 #include "port.h"
 
-#include "Include_string/string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
 Field::Field(String pattern, field_type type) {
   this->type = type;
@@ -67,7 +67,7 @@ bool Field::match(String packet) {
   packet.split(",=", &packet_parts, &size_of_arr);
   bool is_equal = false;
   bool are_matching =false;
-  for (size_t i = 0; i < (size_of_arr/2); ++i) {
+  for (int i = 0; i < (size_of_arr/2); ++i) {
     is_equal = pattern.equals(packet_parts[2*i].trim());
     if (is_equal) {
       are_matching = match_value(packet_parts[2 * i + 1].trim());
