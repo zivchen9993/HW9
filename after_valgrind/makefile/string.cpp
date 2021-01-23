@@ -4,7 +4,14 @@
 #include "string.h"
 
 using namespace std;
-
+/**
+ * creates a new copy of input string, the copy is restricted by size or end
+ * of string
+ * @param src string to copy
+ * @param len max length to copy
+ * @return the new copy of the string.
+ * note: the user is responsible to delete the return value
+ */
 static char *create_new_copy(const char *src, size_t len) {
   char *dst;
   if (src == NULL) {
@@ -17,7 +24,12 @@ static char *create_new_copy(const char *src, size_t len) {
   dst[len] = '\0';
   return dst;
 }
-
+/**
+ * the function checks if a char does exist in a given array
+ * @param data the char to search in the array
+ * @param array_deli the array to check
+ * @return true if the char exists in the array, false otherwise
+ */
 bool does_exist(const char data, const char *array_deli) {
   if (array_deli == NULL) {
     return false;
