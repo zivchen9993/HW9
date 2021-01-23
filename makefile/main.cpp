@@ -11,56 +11,45 @@ using namespace std;
 ///////DONT FORGET TO CHANGE!!!!!!!!!
 
 
-
 int main (int argc, char **argv) {
 
- cout << "im here" << endl;
- int args_fine = check_args(argc-1, argv+1);
- if (!args_fine) {
+ int args_fine = check_args(argc, argv);
+ if (args_fine != 0 ) {
      return -1;
  }
  
- // cout << "im here" << endl;
-  String *law_arr;
-  size_t size_of_law_arr;
-  String *pattern_arr;
-  size_t pat_arr_size;
-  String law_base_string;
-  Field *field_ptr_check;
-  
-  for (int i = 0; i < argc-1; ++i) {
-  cout << argc << endl;
-    law_base_string = argv[i+1];
-    cout << argv[i+1] <<endl;
-      cout << "im here2" << endl;
-    law_base_string.split("=", &law_arr, &size_of_law_arr); // src-ip, xxxxxxxx
-     cout << "im here3" << endl;
-       cout << size_of_law_arr <<endl;
-    law_arr[0].split("-", &pattern_arr, &pat_arr_size); // src, ip
-     cout << "im here4" << endl;
+  	String *law_arr ;
+  	size_t size_of_law_arr;
+  	String *pattern_arr;
+  	size_t pat_arr_size;
+  	String law_base_string;
+    law_base_string = argv[1];
+    Field *field_ptr_check=nullptr;
+    law_base_string.split("=", &law_arr, &size_of_law_arr); 
+    law_arr[0].split("-", &pattern_arr, &pat_arr_size); 
+    String trimmed_pattern_arr = pattern_arr[1].trim();
     
-    cout << pattern_arr[1].data <<endl;
-    if ((pattern_arr[1].trim()).equals("ip")) {
-     cout << "im here5" << endl;
-      Ip ip_law(law_arr[0].trim());
-       cout << "im here6" << endl;
-      ip_law.set_value(law_arr[1].trim());
-       cout << "im here7" << endl;
-      field_ptr_check = &ip_law;
-       cout << "im here8" << endl;
-    } else if ((pattern_arr[1].trim()).equals("port")) {
-     cout << "im here9" << endl;
-      Port port_law(law_arr[0].trim());
-       cout << "im here10" << endl;
-      port_law.set_value(law_arr[1].trim());
-       cout << "im here11" << endl;
+    if ((trimmed_pattern_arr).equals("ip")) {
+    	String trimmed_pattern = law_arr[0].trim();
+    	String trimmed_ip = law_arr[1].trim();
+    	Ip ip_law(trimmed_pattern);
+   		ip_law.set_value(trimmed_ip);
+    	field_ptr_check = &ip_law;
+        // changes here field_ptr and ip_law point to the same place im mem , after leaving this "if" the distructor will   delete the data which      thay are pointing  and then field_ptr pointed to null , so parse should be here 
+        parse_input(*field_ptr_check); 
+    } 
+    else if ((trimmed_pattern_arr).equals("port")) {
+   	String trimmed_pattern = law_arr[0].trim();
+    String trimmed_port = law_arr[1].trim();
+      Port port_law(trimmed_pattern);
+      port_law.set_value(trimmed_port);
       field_ptr_check = &port_law;
+         // changes here - moved parse input here
+      parse_input(*field_ptr_check);
     }
-    cout << "befor_parse" << endl;
-    parse_input(*field_ptr_check);
     delete[] pattern_arr;
     delete[] law_arr;
-  }
   
   return 0;
+  
 }

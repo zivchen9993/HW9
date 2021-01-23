@@ -1,9 +1,7 @@
-
 #ifndef FIELD_H
 #define FIELD_H
-#include "string.h"
 
-#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
+#include "string.h"
 
 enum field_type { IP=0, PORT, GENERIC };
 

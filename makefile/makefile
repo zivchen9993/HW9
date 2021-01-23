@@ -1,24 +1,36 @@
+# Welcomre to Mamat, 044101
+#
+# This is the project's Makefile. It contains the instructions for compiling
+# the projects C files, and then link the generated objects into an executable.
+# This simple file will compile "main.c" to "main.o" and then link it (with C
+# runtime library) to the executable "prog.exe".
+#
+# To compile, open the terminal in the folder that contains
+# this file and run "make".
+#
+# To clean, open the terminal in the folder that contains
+# this file and run "make clean".
+#
+# All eclipse projects in this machine are under /home/mamat/Documents/
 
-TARGET_LIB = firewall
-TARGET_APP = firewall.exe
-OTHER_LIB = input
-
-LIB_SRCS = string.cpp port.cpp field.cpp ip.cpp
-APP_SRCS = main.cpp
-
+#Defenitions
 
 CXX = g++
 CXXFLAGS = -Wall -Wextra -L. -g 
-LDFLAGS = -fPIC -shared 
 RM = rm -f 
 
-all:${TARGET_APP}
 
-$(TARGET_LIB):
-	$(CXX) ${CXXFLAGS} ${LDFLAGS} ${LIB_SRCS} -o lib${TARGET_LIB}.so 
+all:firewall.exe
+
+firewall.exe: firewall
+	$(CXX) ${CXXFLAGS} main.cpp -o firewall.exe -lfirewall -linput
 	
-${TARGET_APP}: ${TARGET_LIB}
-	$(CXX) ${CXXFLAGS} ${APP_SRCS} -o ${TARGET_APP} -l$(TARGET_LIB) -l$(OTHER_LIB)
+
+#Dependencies - 
+firewall:
+	$(CXX) ${CXXFLAGS} -fPIC -shared  field.cpp string.cpp port.cpp ip.cpp -o libfirewall.so 
 	
+
+#Clean
 clean:
-	-${RM} ${TARGET_LIB} ${TARGET_APP}
+	-rm -f firewall firewall.exe

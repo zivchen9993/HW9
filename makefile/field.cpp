@@ -30,16 +30,15 @@ bool Field::set_value(String val) {
   bool is_success;
   if (our_type == IP) {
    // Field *field_ip = new Ip(pattern);
+   // changed here - creating a new copy deleted the initialization so changed is like this and it works (may be there is a better solution
     Ip *ip = (Ip*)this;
     is_success = ip->set_value(val);
   } else if (our_type == PORT) {
-   // Field *field_port = new Port(pattern);
     Port *port = (Port*)this;
     is_success = port->set_value(val);
   } else {
     is_success = false;
   }
-  //who should delete Ip and port?
   return is_success;
 }
 
@@ -47,17 +46,14 @@ bool Field::match_value(String val) const {
   field_type our_type = get_type();
   bool is_success;
   if (our_type == IP) {
-  //  Field *field_ip = new Ip(pattern);
     Ip *ip = (Ip*)this;
     is_success = ip->match_value(val);
   } else if (our_type == PORT) {
-  // Field *field_port = new Port(pattern);
     Port *port = (Port*)this;
     is_success = port->match_value(val);
   } else {
     is_success = false;
   }
-  //who should delete Ip and port?
   return is_success;
 }
 

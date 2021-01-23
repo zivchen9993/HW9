@@ -3,7 +3,9 @@
 
 #include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!!
 
-static char *create_new_copy(const char *src, size_t len) {
+using namespace std;
+
+char *create_new_copy(const char *src, size_t len) {
   char *dst;
   if (src == NULL) {
     return NULL;
@@ -86,9 +88,12 @@ void String::split(const char *delimiters,
     return;
   }
   bool output_is_null = false;
-  if (*output == NULL) {
-    output_is_null = true;
+  //my check //
+  if (output ==  NULL){
+  	//cout << "String split err is NULL" << endl;
+  	output_is_null = true; 
   }
+
   if ((delimiters == NULL) || (*delimiters == '\0') || (*data == '\0')) {
     *size = 1;
     if (!output_is_null) {
@@ -96,6 +101,7 @@ void String::split(const char *delimiters,
       String new_str(*this);
       output_arr[0] = new_str;
       *output = output_arr;
+      delete[] output_arr;
     }
     return;
   }
@@ -129,6 +135,7 @@ void String::split(const char *delimiters,
   }
   *size = size_of_arr;
   if (output_is_null) {
+  	delete[] array;
     return;
   }
   String *output_arr = new String[size_of_arr];
@@ -141,6 +148,7 @@ void String::split(const char *delimiters,
   }
   *output = output_arr;
   delete[] array;
+  delete[] output_arr;
 }
 
 int String::to_integer() const {
@@ -167,7 +175,9 @@ String String::trim() const {
   while (data[trim_end - 1] == ' ') {
     trim_end--;
   }
-  String trimmed_String = create_new_copy((data + trim_begin), (trim_end -
-      trim_begin));
+  char *new_string = create_new_copy((data + trim_begin), (trim_end - trim_begin));
+  String trimmed_String(new_string);
+  // changed here!! we forgot to delete newstring 
+  delete new_string;
   return trimmed_String;
 }

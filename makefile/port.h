@@ -1,11 +1,9 @@
-
 #ifndef PORT_H
 #define PORT_H
 
-#include <cstring>
+#include "string.h"
 #include "field.h"
 
-//#include "Include_string/string.h" ///////DONT FORGET TO CHANGE!!!!!!!!!!!
 class Port : public Field {
 private:
     int range[2];
