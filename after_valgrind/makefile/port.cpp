@@ -5,12 +5,11 @@
 
 #include "port.h"
 
-#include "string.h"///////DONT FORGET TO CHANGE!!!!!!!!!!! 
+
 
 enum { MIN16B = 0, MAX16B = 65535 };
 
-
-Port::Port(String pattern) : Field(pattern, PORT) { 
+Port::Port(String pattern) : Field(pattern, PORT) {
   range[0] = MIN16B;
   range[1] = MAX16B;
 }
@@ -18,21 +17,29 @@ Port::Port(String pattern) : Field(pattern, PORT) {
 bool Port::set_value(String val) {
   String *val_parts;
   size_t size_of_arr;
+  const int law_size = 2;
 
   val.split("-", &val_parts, &size_of_arr);
   //bool is_lawful = false; // what sorts of problems could occur during parsing
-  int first_lim = (val_parts[0].trim()).to_integer();
-  int second_lim = (val_parts[1].trim()).to_integer();
-  if (first_lim > second_lim) {
-  	return false;
+  bool is_law_fine = true; // what sorts of problems could
+  // occur during parsing
+  if (size_of_arr != law_size) {
+    is_law_fine = false;
+  } else {
+    int lower_lim = ((val_parts[0]).trim()).to_integer();
+    int upper_lim = ((val_parts[1]).trim()).to_integer();
+    if (lower_lim > upper_lim ||
+        (lower_lim < MIN16B) ||
+        (upper_lim > MAX16B)) {
+      is_law_fine = false;
+    } else { // valid
+      range[0] = lower_lim;
+      range[1] = upper_lim;
+    }
   }
-  else { 
-    range[0] = first_lim;
-    range[1] = second_lim;
-  } 
-  
+
   delete[] val_parts;
-  return true;
+  return is_law_fine;
 }
 
 bool Port::match_value(String val) const {
