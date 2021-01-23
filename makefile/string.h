@@ -3,12 +3,13 @@
 
 #include <stddef.h>
 #include <iostream>
+//change later !!!
 
 class String {
+public:
     char *data;
     size_t length;
 
-public:
 
     /**
      * @brief Initiates an empty string

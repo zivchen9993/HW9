@@ -39,8 +39,10 @@ String::String() {
   length = 0;
 }
 
-String::String(const String &str)
-    : length(str.length), data(create_new_copy(str.data, str.length)) {}
+String::String(const String &str) {
+    length = str.length;
+    data = create_new_copy(str.data, str.length);
+}
 
 String::String(const char *str) {
   length = strlen(str);
@@ -130,7 +132,7 @@ void String::split(const char *delimiters,
     return;
   }
   String *output_arr = new String[size_of_arr];
-  for (int i = 0; i < (size_of_arr*2); i += 2) {
+  for (size_t i = 0; i < (size_of_arr*2); i += 2) {
     char *sub_data = create_new_copy((data + array[i]), (array[i + 1] -
     array[i]));
     String sub_string(sub_data);

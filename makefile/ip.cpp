@@ -34,7 +34,7 @@ bool Ip::set_value(String val) {
   }
   low = (ip_num >> mask_comp);
   low = (low << mask_comp);
-  unsigned int high_ones = (MAX32B >> mask);
+  unsigned int high_ones = ((unsigned)MAX32B >> (unsigned)mask);
   high = low + high_ones;
   delete[] val_parts;
   return true;
