@@ -56,12 +56,21 @@ bool Ip::set_value(String val) {
 bool Ip::match_value(String val) const {
   String *val_parts;
   size_t size_of_arr;
+  const int expect_arr_size = 4;
   val.split(".", &val_parts, &size_of_arr);
+  if (size_of_arr != expect_arr_size) {
+    delete[] val_parts;
+    return false;
+  }
   unsigned int ip_num = 0;
   int val_int;
   bool is_lawful = false; // what sorts of problems could occur during parsing
   for (int i = 0; i < SEGMENTS; ++i) {
     val_int = (val_parts[i].trim()).to_integer();
+    if ((val_int < 0) || (val_int > 255)) {
+      delete[] val_parts;
+      return false;
+    }
     ip_num += (val_int << (24 - (8 * i)));
   }
   if ((ip_num >= low) && (ip_num <= high)) {

@@ -1,7 +1,11 @@
 #!/bin/bash
+export LC_ALL=C
+remain_rules=`cat "$1" | grep -o '^[^#]*'`
+#|tr -d "[:blank:]"`
+remain_packets=`(tee) | grep -o '^[^#]*'`
+echo -e "$remain_rules" > rules_input_after.txt
 
-remain_rules=`cat "$1"|grep -o '^[^#]*'|tr -d "[:blank:]"|sort`
-remain_packets=`(tee) | grep -o '^[^#]*'|tr -d "[:blank:]"|sort`
+#|tr -d "[:blank:]"|sort`
 > packets_output.txt
 
 packets_to_print=""
@@ -13,8 +17,9 @@ while IFS=, read -r first second third fourth; do
    packets_to_print+=`echo -e "$surviving_packets"`
    packets_to_print+="\n"
 done <<< "$remain_rules"
-
-packets_to_print=`echo "$packets_to_print" | sort | uniq`
+packets_to_print=`echo -e "$packets_to_print" | sort | uniq`
+echo -e "$packets_to_print" > beS_packets_output.txt
+packets_to_print=`echo -e"$packets_to_print" | sort | uniq |tr -d "[:blank:]"`
 echo -e "$packets_to_print"
 echo -e "$packets_to_print" > packets_output.txt
-head -n -1 packets_output.txt > temp.txt ; mv temp.txt packets_output.txt
+#head -n -1 packets_output.txt > temp.txt ; mv temp.txt packets_output.txt
