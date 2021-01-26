@@ -20,9 +20,7 @@ bool Port::set_value(String val) {
   const int law_size = 2;
 
   val.split("-", &val_parts, &size_of_arr);
-  //bool is_lawful = false; // what sorts of problems could occur during parsing
-  bool is_law_fine = true; // what sorts of problems could
-  // occur during parsing
+  bool is_law_fine = true; 
   if (size_of_arr != law_size) {
     is_law_fine = false;
   } else {
@@ -32,7 +30,7 @@ bool Port::set_value(String val) {
         (lower_lim < MIN16B) ||
         (upper_lim > MAX16B)) {
       is_law_fine = false;
-    } else { // valid
+    } else { 
       range[0] = lower_lim;
       range[1] = upper_lim;
     }

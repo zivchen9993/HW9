@@ -36,11 +36,10 @@ bool Ip::set_value(String val) {
           ip_num += (val_int << (24 - (8 * i)));
         }
       }
-      if (is_law_fine) {
+      if (is_law_fine && (mask != 0)) {
         low = (ip_num >> mask_comp);
         low = (low << mask_comp);
         unsigned int high_ones = ((unsigned) MAX32B >> (unsigned) mask);
-        // changed here! there was a problem with the calculation of high if the mask is 32 .. it sums a wrong number
         if (mask != 32) {
           high = low + high_ones;
         } else {
@@ -64,7 +63,7 @@ bool Ip::match_value(String val) const {
   }
   unsigned int ip_num = 0;
   int val_int;
-  bool is_lawful = false; // what sorts of problems could occur during parsing
+  bool is_lawful = false;
   for (int i = 0; i < SEGMENTS; ++i) {
     val_int = (val_parts[i].trim()).to_integer();
     if ((val_int < 0) || (val_int > 255)) {

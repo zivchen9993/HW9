@@ -44,7 +44,6 @@ int main(int argc, char **argv) {
       return -1;
     }
     field_ptr_check = &port_law;
-    // changes here - moved parse input here
     parse_input(*field_ptr_check);
   }
 

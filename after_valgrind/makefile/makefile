@@ -15,27 +15,27 @@
 
 #Defenitions
 CXX = g++
-CXXFLAGS = -Wall -Wextra -L. -g
+CXXFLAGS = -Wall -Wextra -L. -g -O3
 RM = rm -f 
-OBJS = main.o ip.o port.o field.o string.o
+OBJS = ip.o port.o field.o string.o
+
 
 all:firewall.exe libfirewall.so
 
-
 libfirewall.so: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -shared -o libfirewall.so
+	$(CXX) $(CXXFLAGS) -fpic -shared $(OBJS) -o libfirewall.so
 	
-firewall.exe: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o firewall.exe -lfirewall -linput -L.
-	
+firewall.exe: main.cpp libfirewall.so
+	$(CXX) $(CXXFLAGS) main.cpp -o firewall.exe -lfirewall -linput -L.
 
-#Dependencies - 	
+#Dependencies - 
+	
 main.o: main.cpp string.h ip.h port.h field.h input.h
 	$(CXX) $(CXXFLAGS) -c main.cpp
 ip.o: ip.cpp ip.h string.h field.h input.h
 	$(CXX) $(CXXFLAGS) -c ip.cpp
 port.o: port.cpp port.h string.h field.h input.h
-	$(CXX) $(CXXFLAGS) -c port.cpp -shared
+	$(CXX) $(CXXFLAGS) -c port.cpp
 field.o: field.cpp field.h ip.h port.h string.h input.h
 	$(CXX) $(CXXFLAGS) -c field.cpp
 string.o: string.cpp string.h input.h
@@ -43,4 +43,4 @@ string.o: string.cpp string.h input.h
 
 #Clean
 clean:
-	-rm -rf *.o firewall.exe
+	rm -rf *.o firewall.exe libfirewall.so

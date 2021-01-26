@@ -44,9 +44,6 @@ bool does_exist(const char data, const char *array_deli) {
   return false;
 }
 
-/////////////////////////////////////////////////////
-////////////////////functions from string.h//////////
-/////////////////////////////////////////////////////
 String::String() {
   data = new char[1];
   *data = '\0';
@@ -100,9 +97,8 @@ void String::split(const char *delimiters,
     return;
   }
   bool output_is_null = false;
-  //my check //
+
   if (output ==  NULL){
-  	//cout << "String split err is NULL" << endl;
   	output_is_null = true; 
   }
 
@@ -187,7 +183,6 @@ String String::trim() const {
   }
   char *new_string = create_new_copy((data + trim_begin), (trim_end - trim_begin));
   String trimmed_String(new_string);
-  // changed here!! we forgot to delete newstring 
   delete[] new_string;
   return trimmed_String;
 }

@@ -1,0 +1,3 @@
+echo -e "\n*** our test ***"
+src-ip=254.78.247.76,dst-ip=176.231.117.253,  src-port=    20,  dst-port=55778    
+src-ip=254.78.247.76,  dst-ip=176.231.117.253,  src-port=20,  dst-port=55778 ##jfeffsd
