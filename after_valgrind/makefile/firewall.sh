@@ -3,7 +3,7 @@ export LC_ALL=C
 remain_rules=`cat "$1" | grep -o '^[^#]*'`
 #|tr -d "[:blank:]"`
 remain_packets=`(tee) | grep -o '^[^#]*'`
-echo -e "$remain_rules" > rules_input_after.txt
+echo "$remain_rules" > rules_input_after.txt
 
 #|tr -d "[:blank:]"|sort`
 > packets_output.txt
@@ -19,7 +19,7 @@ while IFS=, read -r first second third fourth; do
 done <<< "$remain_rules"
 packets_to_print=`echo -e "$packets_to_print" | sort | uniq`
 echo -e "$packets_to_print" > beS_packets_output.txt
-packets_to_print=`echo -e"$packets_to_print" | sort | uniq |tr -d "[:blank:]"`
+packets_to_print=`echo -e "$packets_to_print" | sort | uniq |tr -d "[:blank:]" | grep -o '^[^#]*'`
 echo -e "$packets_to_print"
 echo -e "$packets_to_print" > packets_output.txt
 #head -n -1 packets_output.txt > temp.txt ; mv temp.txt packets_output.txt

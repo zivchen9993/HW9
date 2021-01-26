@@ -14,23 +14,33 @@
 # All eclipse projects in this machine are under /home/mamat/Documents/
 
 #Defenitions
-
 CXX = g++
-CXXFLAGS = -Wall -Wextra -L. -g 
+CXXFLAGS = -Wall -Wextra -L. -g
 RM = rm -f 
+OBJS = main.o ip.o port.o field.o string.o
+
+all:firewall.exe libfirewall.so
 
 
-all:firewall.exe
-
-firewall.exe: firewall
-	$(CXX) ${CXXFLAGS} main.cpp -o firewall.exe -lfirewall -linput
+libfirewall.so: $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -shared -o libfirewall.so
+	
+firewall.exe: $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o firewall.exe -lfirewall -linput -L.
 	
 
-#Dependencies - 
-firewall:
-	$(CXX) ${CXXFLAGS} -fPIC -shared  field.cpp string.cpp port.cpp ip.cpp -o libfirewall.so 
-	
+#Dependencies - 	
+main.o: main.cpp string.h ip.h port.h field.h input.h
+	$(CXX) $(CXXFLAGS) -c main.cpp
+ip.o: ip.cpp ip.h string.h field.h input.h
+	$(CXX) $(CXXFLAGS) -c ip.cpp
+port.o: port.cpp port.h string.h field.h input.h
+	$(CXX) $(CXXFLAGS) -c port.cpp -shared
+field.o: field.cpp field.h ip.h port.h string.h input.h
+	$(CXX) $(CXXFLAGS) -c field.cpp
+string.o: string.cpp string.h input.h
+	$(CXX) $(CXXFLAGS) -c string.cpp
 
 #Clean
 clean:
-	-rm -f firewall firewall.exe
+	-rm -rf *.o firewall.exe

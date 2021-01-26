@@ -188,6 +188,6 @@ String String::trim() const {
   char *new_string = create_new_copy((data + trim_begin), (trim_end - trim_begin));
   String trimmed_String(new_string);
   // changed here!! we forgot to delete newstring 
-  delete new_string;
+  delete[] new_string;
   return trimmed_String;
 }

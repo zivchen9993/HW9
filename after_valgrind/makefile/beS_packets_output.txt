@@ -1,7 +1,1 @@
-src-ip=133.224.177.174,dst-ip=130.175.1.84,src-port=53,dst-port=1
-src-ip =133.224.177.174,dst-ip=130.175.1.84,src-port=53,dst-port=2
 
-#sorted to:
-
-src-ip =133.224.177.174,dst-ip=130.175.1.84,src-port=53,dst-port=2
-src-ip=133.224.177.174,dst-ip=130.175.1.84,src-port=53,dst-port=1
